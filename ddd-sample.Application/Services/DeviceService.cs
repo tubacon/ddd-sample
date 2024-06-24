@@ -53,6 +53,6 @@ namespace ddd_sample.Application.Services
                 device.DateUpdated = DateTime.Now;
             }
             return Task.FromResult(device);
-        }
+        } 
     }
 }
