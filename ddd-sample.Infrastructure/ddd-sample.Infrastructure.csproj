@@ -8,9 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contexts\" />
-    <Folder Include="Data\" />
     <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.5.24306.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ddd-sample.Domain\ddd-sample.Domain.csproj" />
   </ItemGroup>
 
 </Project>

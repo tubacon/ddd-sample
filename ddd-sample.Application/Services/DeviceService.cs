@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ddd_sample.Application.Services
 {
-    public class DeviceService : IDevice
+    public class DeviceService : IDeviceService
     {
         private readonly List<DeviceDto> _devices = new List<DeviceDto>();
 

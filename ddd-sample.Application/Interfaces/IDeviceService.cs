@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ddd_sample.Application.Interfaces
 {
-    public interface IDevice
+    public interface IDeviceService
     {
         Task<DeviceDto> CreateDeviceAsync(DeviceDto deviceDto);
         Task<DeviceDto> UpdateDeviceAsync(int id, DeviceDto deviceDto);
