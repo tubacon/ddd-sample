@@ -25,8 +25,37 @@ namespace ddd_sample.API
             services.AddAutoMapper(typeof(MappingProfile));
 
             //DB
-           // services.AddDbContext<ddd_sampleDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ddd_sampleDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
 
+        }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapFallbackToFile("index.html");
+            });
         }
     }
 }
