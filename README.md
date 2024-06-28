@@ -1,4 +1,4 @@
-# Project Title
+# ddd-sample
 
 This project is built using ASP.NET 8.0 and follows the principles of Domain-Driven Design (DDD) for its folder structure and organization.
 
