@@ -10,6 +10,18 @@ namespace ddd_sample.API.Controllers
         private readonly IDeviceService _deviceService;
         private readonly IMapper _mapper;
 
+        public IActionResult Index()
+        {
+            var data = _deviceService.GetAllDevicesAsync();
+            return View(data);
+        }
+
+        private static List<DeviceDto> devices = new List<DeviceDto>
+        {
+            new DeviceDto(1, "Device 1"),
+            new DeviceDto(2, "Device 2")
+        };
+
 
         public DeviceController(IDeviceService deviceService, IMapper mapper)
         {

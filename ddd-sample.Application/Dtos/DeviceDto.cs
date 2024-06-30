@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ddd_sample.Application.Dtos
 {
@@ -13,5 +14,13 @@ namespace ddd_sample.Application.Dtos
         public string DeviceName { get; set; }
         public DateTime DateAdded { get; set; }
         public DateTime DateUpdated { get; set; }
+
+        public DeviceDto() { } // without parameter
+
+        public DeviceDto(int id, string deviceName)
+        {
+            Id = id;
+            DeviceName = deviceName;
+        }
     }
 }

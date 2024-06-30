@@ -7,4 +7,8 @@
     <RootNamespace>ddd_sample.Web</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ddd-sample.Application\ddd-sample.Application.csproj" />
+  </ItemGroup>
+
 </Project>

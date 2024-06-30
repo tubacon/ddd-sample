@@ -1,10 +1,33 @@
 ﻿@page
-@model IndexModel
+@model IEnumerable<ddd_sample.Application.Dtos.DeviceDto>
 @{
-    ViewData["Title"] = "Home page";
+    ViewBag.Title = "Home Page";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Devices</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var device in Model)
+        {
+            <tr>
+                <td>@device.DeviceName</td>
+               @*  <td>@device.Description</td>
+                <td>
+                    <button class="btn btn-warning" onclick="editDevice(@device.Id, '@device.Name', '@device.Description')">Edit</button>
+                    <form action="/Home/Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@device.Id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td> *@
+            </tr>
+        }
+    </tbody>
+</table>
+

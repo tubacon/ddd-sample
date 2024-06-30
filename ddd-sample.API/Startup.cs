@@ -19,6 +19,7 @@ namespace ddd_sample.API
         {
             services.AddControllersWithViews();
             services.AddSwaggerGen();
+
             services.AddScoped<IDeviceService, DeviceService>();
 
             //mapper
